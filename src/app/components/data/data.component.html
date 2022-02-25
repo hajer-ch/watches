@@ -1,0 +1,16 @@
+<table class="table">
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>PWD</th>
+        <th>Date de naissance</th>
+    </tr>
+    <tr *ngFor='let u of users' appCard>
+        <td>{{u.nom}}</td>
+        <td>{{u.prenom}}</td>
+        <td>{{u.email}}</td>
+        <td>{{u.password | asterix}}</td>
+        <td>{{u.dateNaissane | date: 'MM-dd/yyyy' }}</td>
+    </tr>
+</table>

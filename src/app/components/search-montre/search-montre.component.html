@@ -1,0 +1,37 @@
+<div class="container mt_30">
+
+    <div class="row ">
+        <div class="col-sm-12 mt_30">
+            <div id="product-tab" class="mt_10">
+                <div class="heading-part mb_10 ">
+                    <h2 class="main_title">Search Montre</h2>
+                    <div [ngClass]="{'info': age < 10,
+                 'warn': age > 10 && age < 20, 
+                 'error': age > 30}">{{age}}
+
+                    </div>
+
+                    <li [ngStyle]="{'color':getColor(lunette)}"> {{lunette}}
+                    </li>
+                    <div [ngStyle]="{'background-color':lunette === 'verte' ? 'red' : 'blue' }"> {{lunette}}
+                        <div>
+                        </div>
+                        <div class="tab-content clearfix box">
+                            <div class="" id="">
+                                <div class="">
+                                    <div class="input-field" style="text-align: center;">
+                                        <input #searchBox (keyup)="search(searchBox.value)" placeholder="Search" />
+                                    </div>
+
+                                    <div class="">
+                                        <a *ngFor="let m of montres$ | async" (click)="gotoDetail(m)" class="">
+                                            <app-montre [description]="m.description" [price]="m.price"></app-montre>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

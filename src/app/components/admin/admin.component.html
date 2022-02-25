@@ -1,0 +1,60 @@
+<!-- <app-search-montre></app-search-montre> -->
+<mat-spinner *ngIf='isLoading'></mat-spinner>
+
+<table class="table table-striped" *ngIf='!isLoading'>
+    <thead>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Marque</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Display</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of montres">
+            <td><img [src]="m.image" alt=""></td>
+            <td appCard>{{m.marque | reverse}}</td>
+            <td>{{m.description | customMr: 'MR':"Great"}}</td>
+            <td>{{m.price}}</td>
+            <td *ngIf="isUserAuthenticated"><button class="btn btn-danger" (click)="watchDisplay(m.id)">Display</button></td>
+            <td *ngIf="isUserAuthenticated"><button class="btn btn-danger" (click)="EditWatch(m.id)">Edit</button></td>
+            <td *ngIf="isUserAuthenticated"><button class="btn btn-danger" (click)="deleteWatch(m)">Delete</button></td>
+
+        </tr>
+    </tbody>
+</table>
+
+<!-- <app-admin-watch></app-admin-watch> -->
+<!-- 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">FullName</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Message</th>
+            <th scope="col">Display</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of contacts">
+            <td>{{c.id}}</td>
+            <td>{{c.contactFullName}}</td>
+            <td>{{c.contactEmail}}</td>
+            <td>{{c.contactSubject}}</td>
+            <td>{{c.contactMessage}}</td>
+            <td><button class="btn btn-danger">Display</button></td>
+            <td><button class="btn btn-danger">Edit</button></td>
+            <td><button class="btn btn-danger">Delete</button></td>
+
+        </tr>
+    </tbody>
+</table>
+<h4 *ngIf='!montres' class="center">
+    <app-loader></app-loader>
+</h4> -->

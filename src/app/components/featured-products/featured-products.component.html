@@ -1,0 +1,41 @@
+<div class="row ">
+    <div class="col-sm-12 mt_30">
+        <!-- =====  PRODUCT TAB  ===== -->
+        <div id="product-tab" class="mt_10">
+            <div class="heading-part mb_10 ">
+                <h2 class="main_title">Featured Products</h2>
+            </div>
+            <ul class="nav text-right">
+                <li class="active"> <a href="index.html#nArrivals" data-toggle="tab">New Arrivals</a> </li>
+                <li><a href="index.html#Bestsellers" data-toggle="tab">Bestsellers</a> </li>
+                <li><a href="index.html#Featured" data-toggle="tab">Featured</a> </li>
+            </ul>
+            <div class="tab-content clearfix box">
+                <div class="tab-pane active" id="nArrivals">
+                    <div class="nArrivals owl-carousel">
+
+                        <div class="product-grid" *ngFor="let m of montres">
+                            <app-montre [description]="m.description" [price]="m.price"></app-montre>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="Bestsellers">
+                    <div class="Bestsellers owl-carousel">
+                        <div class="product-grid" *ngFor="let m of montres">
+                            <app-montre [description]="m.description" [price]="m.price"></app-montre>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="Featured">
+                    <div class="Featured owl-carousel">
+
+                        <div class="product-grid" *ngFor="let m of montres">
+                            <app-montre [description]="m.description" [price]="m.price"></app-montre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- =====  PRODUCT TAB  END ===== -->
+    </div>
+</div>

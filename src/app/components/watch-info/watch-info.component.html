@@ -1,0 +1,6 @@
+<mat-spinner *ngIf='isLoading'></mat-spinner>
+<div *ngIf='!isLoading'>
+    <p>watch-info works!</p>
+    {{montre.description}}<br>
+    <img [src]="montre.image" width="100px" alt="">
+</div>

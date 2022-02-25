@@ -1,0 +1,20 @@
+<div class="container mt_30">
+    <mat-spinner *ngIf='isLoading'></mat-spinner>
+    <div class="row" *ngIf='!isLoading'>
+        <div class="col-12">
+            <div class="row">
+                <div class="">
+                    <div id="contact_form">
+                        <form class="bg-light p-5 montre-form" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+                            <label for="">Email</label>
+                            <input class="full-with-form  mt_30" type="text" id="loginEmail" name="loginEmail" [(ngModel)]="model.email" [ngModelOptions]="{standalone:true}" />
+                            <label for="">Password</label>
+                            <input class="full-with-form  mt_30" type="password" id="password" name="password" [(ngModel)]="model.password" [ngModelOptions]="{standalone:true}" />
+                            <button class="btn mt_30" *ngIf="!isLoading">Se connecter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

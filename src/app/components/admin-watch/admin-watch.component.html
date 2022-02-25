@@ -1,0 +1,19 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let t of tableHeaders">{{t}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <th scope="row">{{u.id}}</th>
+            <td>{{u.firstName}}</td>
+            <td>{{u.lastName}}</td>
+            <td>{{u.email}}</td>
+            <td><button class="btn btn-info" (click)="display(u.id)">Display</button></td>
+            <td><button class="btn btn-warning">Edit</button></td>
+            <td><button class="btn btn-danger">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
